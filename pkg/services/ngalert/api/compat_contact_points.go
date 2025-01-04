@@ -51,7 +51,7 @@ func ContactPointToContactPointExport(cp definitions.ContactPoint) (notify.APIRe
 		len(cp.Pagerduty) + len(cp.OnCall) + len(cp.Pushover) + len(cp.Sensugo) +
 		len(cp.Sns) + len(cp.Slack) + len(cp.Teams) + len(cp.Telegram) +
 		len(cp.Threema) + len(cp.Victorops) + len(cp.Webhook) + len(cp.Wecom) +
-		len(cp.Webex) + len(cp.Mqtt)
+		len(cp.Webex) + len(cp.Mqtt) + len(cp.Dooray)
 
 	integration := make([]*notify.GrafanaIntegrationConfig, 0, contactPointsLength)
 
@@ -205,6 +205,13 @@ func ContactPointToContactPointExport(cp definitions.ContactPoint) (notify.APIRe
 	}
 	for _, i := range cp.Webex {
 		el, err := marshallIntegration(j, "webex", i, i.DisableResolveMessage)
+		if err != nil {
+			errs = append(errs, err)
+		}
+		integration = append(integration, el)
+	}
+	for _, i := range cp.Dooray {
+		el, err := marshallIntegration(j, "dooray", i, i.DisableResolveMessage)
 		if err != nil {
 			errs = append(errs, err)
 		}

@@ -300,6 +300,14 @@ type WebhookIntegration struct {
 	TLSConfig                *TLSConfig `json:"tlsConfig,omitempty" yaml:"tlsConfig,omitempty" hcl:"tlsConfig,block"`
 }
 
+type DoorayIntegration struct {
+	DisableResolveMessage *bool `json:"-" yaml:"-" hcl:"disable_resolve_message"`
+
+	URL     string  `json:"url" yaml:"url" hcl:"url"`
+	APIURL  *string `json:"api_url,omitempty" yaml:"api_url,omitempty" hcl:"api_url"`
+	Message *string `json:"message,omitempty" yaml:"message,omitempty" hcl:"message"`
+}
+
 type WecomIntegration struct {
 	DisableResolveMessage *bool `json:"-" yaml:"-" hcl:"disable_resolve_message"`
 
@@ -337,4 +345,5 @@ type ContactPoint struct {
 	Webhook      []WebhookIntegration      `json:"webhook" yaml:"webhook" hcl:"webhook,block"`
 	Wecom        []WecomIntegration        `json:"wecom" yaml:"wecom" hcl:"wecom,block"`
 	Webex        []WebexIntegration        `json:"webex" yaml:"webex" hcl:"webex,block"`
+	Dooray       []DoorayIntegration       `json:"dooray" yaml:"dooray" hcl:"dooray,block"`
 }

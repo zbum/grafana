@@ -4549,7 +4549,8 @@
             " threema",
             " victorops",
             " webhook",
-            " wecom"
+            " wecom",
+            " dooray"
           ],
           "example": "webhook"
         },

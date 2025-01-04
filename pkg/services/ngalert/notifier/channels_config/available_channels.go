@@ -1699,6 +1699,37 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 				},
 			},
 		},
+		{
+			Type:        "dooray",
+			Name:        "Dooray",
+			Description: "Sends notifications to Dooray messenger",
+			Heading:     "Dooray settings",
+			Options: []NotifierOption{
+				{
+					Label:        "URL",
+					Element:      ElementTypeInput,
+					InputType:    InputTypeText,
+					Placeholder:  "Dooray messenger incoming webhook url",
+					PropertyName: "url",
+					Required:     true,
+					Secure:       true,
+				},
+				{
+					Label:        "Title",
+					Description:  "Templated title of the message",
+					Element:      ElementTypeTextArea,
+					InputType:    InputTypeText,
+					Placeholder:  alertingTemplates.DefaultMessageTitleEmbed,
+					PropertyName: "title",
+				},
+				{
+					Label:        "Message",
+					Element:      ElementTypeTextArea,
+					Placeholder:  alertingTemplates.DefaultMessageEmbed,
+					PropertyName: "message",
+				},
+			},
+		},
 	}
 }
 
