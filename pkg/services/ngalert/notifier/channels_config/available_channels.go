@@ -1723,10 +1723,16 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 					PropertyName: "title",
 				},
 				{
-					Label:        "Message",
+					Label:        "IconURL",
+					Element:      ElementTypeTextArea,
+					Placeholder:  "Dooray messenger incoming webhook icon url",
+					PropertyName: "icon_url",
+				},
+				{
+					Label:        "Description",
 					Element:      ElementTypeTextArea,
 					Placeholder:  alertingTemplates.DefaultMessageEmbed,
-					PropertyName: "message",
+					PropertyName: "description",
 				},
 			},
 		},
