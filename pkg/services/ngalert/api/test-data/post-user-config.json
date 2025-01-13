@@ -331,6 +331,17 @@
                         "secureSettings": {
                             "password": "<password>"
                         }
+                    },
+                    {
+                      "name": "a dooray receiver",
+                      "type": "dooray",
+                      "sendReminder": false,
+                      "disableResolveMessage": false,
+                      "frequency": "5m",
+                      "settings": null,
+                      "secureSettings": {
+                        "password": "<password>"
+                      }
                     }
                 ]
             }

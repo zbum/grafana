@@ -363,6 +363,11 @@ func parseIntegration(json jsoniter.API, result *definitions.ContactPoint, recei
 		if err = json.Unmarshal(data, &integration); err == nil {
 			result.Webex = append(result.Webex, integration)
 		}
+	case "dooray":
+		integration := definitions.DoorayIntegration{DisableResolveMessage: disable}
+		if err = json.Unmarshal(data, &integration); err == nil {
+			result.Dooray = append(result.Dooray, integration)
+		}
 	default:
 		err = fmt.Errorf("integration %s is not supported", receiverType)
 	}
